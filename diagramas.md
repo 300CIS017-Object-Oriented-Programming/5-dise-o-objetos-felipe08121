@@ -1,4 +1,4 @@
-...
+``` mermaid
 classDiagram
     Sistema: - Libro [ ] libros
     Sistema: - Usuario [ ] usuarios
@@ -37,4 +37,4 @@ classDiagram
         + registrarPrestamo( )
         + registrarDevolucion()
     }
-...
+```
