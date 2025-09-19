@@ -2,38 +2,41 @@
 classDiagram
     Sistema: - Libro [ ] libros
     Sistema: - Usuario [ ] usuarios
+    Sistema: - Prestamo [ ] prestamos
     Sistema: + Registrarlibro()
     
     Sistema: + mostrarListaLibros()
     Sistema: + consultarPrestamosUsuarios()
-    Sistema "Tiene"o--> Libro
-    Sistema "Tiene"o--> Usuario
-    Sistema "Tiene"o--> Prestamo
+
+
+    Sistema o--  Usuario : gestiona
+    Sistema o-- Libro : gestiona
+    Sistema o--  Prestamo : gestiona
 
     class Usuario{
         - String nombre
         - int ID 
-        - Libro [ ] libros
-
     }
 
     
     Usuario "tiene" o--> Prestamo
-    Libro "Tiene"--> Usuario
+    Libro "Tiene"--> Prestamo
 
 
     class Libro{
          - String titulo
-         - String Autor
-         - String Genero
+         - String autor
+         - String genero
+         - String estado
          - int ID
-         - Usuario usuario
     }
     
     class Prestamo{
         - date fecha inicio
         - date fecha devolucion
-        - string estado
+        - String estado
+        - Usuario usuario
+        - Libro libro
         + registrarPrestamo( )
         + registrarDevolucion()
     }
