@@ -16,6 +16,7 @@ classDiagram
     class Usuario{
         - String nombre
         - int ID 
+        - Prestamo [ ] prestamos
     }
 
     
