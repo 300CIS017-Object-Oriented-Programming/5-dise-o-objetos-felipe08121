@@ -4,11 +4,11 @@ classDiagram
     Sistema: - Usuario [ ] usuarios
     Sistema: + Registrarlibro()
     
-    Sistema: + MostrarListaLibros()
-    Sistema: + ConsultarPrestamosUsuarios()
+    Sistema: + mostrarListaLibros()
+    Sistema: + consultarPrestamosUsuarios()
     Sistema "Tiene"o--> Libro
     Sistema "Tiene"o--> Usuario
-
+    Sistema "Tiene"o--> Prestamo
 
     class Usuario{
         - String nombre
@@ -17,9 +17,11 @@ classDiagram
 
     }
 
-    Usuario "tiene"o--> Libro
+    
     Usuario "tiene" o--> Prestamo
     Libro "Tiene"--> Usuario
+
+
     class Libro{
          - String titulo
          - String Autor
@@ -32,7 +34,7 @@ classDiagram
         - date fecha inicio
         - date fecha devolucion
         - string estado
-        + RegistrarPrestamo( )
-        + RegistrarDevolucion()
+        + registrarPrestamo( )
+        + registrarDevolucion()
     }
 ...
